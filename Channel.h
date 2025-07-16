@@ -61,7 +61,7 @@ void   enableReading()
 }
 void   disableReading()
 {
-    events_&=-KReadEvent;//清除写事件
+    events_&=~KReadEvent;//清除写事件
     update();
 }
 void   enableWriting()
@@ -71,12 +71,12 @@ void   enableWriting()
 }
 void   disableWriting()
 {
-    events_&=-KWriteEvent;//清除写事件   //按位或，只要有一位是1就是1
+    events_&=~KWriteEvent;//清除写事件   //按位或，只要有一位是1就是1
     update();
 }
 void   disableAll()
 {
-    events_&=-KNoneEvent;
+    events_&=KNoneEvent;
     update();
 }
 

@@ -51,7 +51,7 @@ public:
     int   wakeupFD_;//(eventfd系统调用)//主要作用，当mainloop获取一个新用户的channel,通过轮询算法选择一个subloop,通过该成员唤醒subloop处理channel
     std::unique_ptr<Channel>wakeupChannel_;
     ChannelList   activeChannels_;
-    Channel   *currentActiveChannel_;
+    //Channel   *currentActiveChannel_;
    // std::atomic_bool callingPendingFunctors_;//标识当前loop是否有需要执行的回调操作
     std::vector<Functor>pendingFunctors_;//存储loop需要执行的所有回调操作
     std::mutex  mutex_;//互斥锁，用来保护上面vector容器的线程安全操作

@@ -1,6 +1,6 @@
 CMakeFiles/mymuduo.dir/CurrentThread.cc.o: \
- /home/stu/muduodiy/CurrentThread.cc /usr/include/stdc-predef.h \
- /home/stu/muduodiy/CurrentThread.h \
+ /home/stu/muduoz/CurrentThread.cc /usr/include/stdc-predef.h \
+ /home/stu/muduoz/CurrentThread.h \
  /usr/include/x86_64-linux-gnu/sys/syscall.h \
  /usr/include/x86_64-linux-gnu/asm/unistd.h \
  /usr/include/x86_64-linux-gnu/asm/unistd_64.h \
@@ -17,7 +17,7 @@ CMakeFiles/mymuduo.dir/CurrentThread.cc.o: \
  /usr/include/x86_64-linux-gnu/bits/types.h \
  /usr/include/x86_64-linux-gnu/bits/typesizes.h \
  /usr/include/x86_64-linux-gnu/bits/time64.h \
- /usr/lib/gcc/x86_64-linux-gnu/13/include/stddef.h \
+ /usr/lib/gcc/x86_64-linux-gnu/11/include/stddef.h \
  /usr/include/x86_64-linux-gnu/bits/confname.h \
  /usr/include/x86_64-linux-gnu/bits/getopt_posix.h \
  /usr/include/x86_64-linux-gnu/bits/getopt_core.h \

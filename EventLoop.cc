@@ -42,8 +42,8 @@ int   createEventfd()
     threadID_(CurrentThread::tid()),
     poller_(Poller::newDefaultPoller(this)),
     wakeupFD_(createEventfd()),
-    wakeupChannel_(new   Channel(this,wakeupFD_)),
-    currentActiveChannel_(nullptr)
+    wakeupChannel_(new   Channel(this,wakeupFD_))
+    //currentActiveChannel_(nullptr)
     {
         LOG_DEBUG("Eventloop  created  %p  in  thread%d\n",this,threadID_);
         if(t_loopInThisThread)
@@ -139,7 +139,7 @@ int   createEventfd()
         {
             cb();
         }
-        else//在非当前的loop线程中，执行cb,需要唤醒loop所在线程，执行cb
+        else//在非当前的loop线程中，执行cb,需要唤醒loop所在线程，执行cb,“唤醒”只是打断 poll() 的阻塞，让 EventLoop 所在线程继续往下执行,最终自己执行任务
         {
                 queueInLoop(cb);
         }

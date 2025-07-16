@@ -109,6 +109,7 @@ void   EPollPoller::updateChannel(Channel  *channel)  //epoll_ctr->add/mod
         for(int i=0;i<numEvents;++i)
         {
             Channel *channel=static_cast<Channel*>(events_[i].data.ptr);
+            LOG_INFO("epoll_wait result: event[%d] channel=%p events=%d\n", i, channel, events_[i].events);
             channel->set_revents(events_[i].events);
             activeChannels->push_back(channel);//Eventloop拿到了他的poller返回得所有发生事件得channel列表了
         }
@@ -121,8 +122,10 @@ void   EPollPoller::updateChannel(Channel  *channel)  //epoll_ctr->add/mod
 
           int fd=channel->fd();
         event.events=channel->events();
+    
         event.data.ptr=channel;
-        event.data.fd=fd;
+        LOG_INFO("epoll_ctl op=%d fd=%d channel=%p\n", operation, fd, channel);
+
       
         if(::epoll_ctl(epollfd_,operation,fd,&event)<0)
         {

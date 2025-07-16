@@ -19,7 +19,7 @@ const   int  Channel::KWriteEvent=EPOLLOUT;//需要监听“写”事件。
 后续可以通过 lock() 判断这个对象是否还存活；
 用 weak_ptr 来避免循环引用、悬空指针。
   */
- //channel的tie方法什么时候调用过
+ //channel的tie方法什么时候调用过  一个Tcpconnection新连接创建的时候
  void  Channel::tie(const  std::shared_ptr<void>&obj)
  {
     tie_=obj;
